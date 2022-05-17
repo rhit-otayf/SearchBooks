@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.css" />
+  <link rel="stylesheet" href="styles/main.css">
+  <title>my-internship</title>
+</head>
+
+<body>
+  <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
+    <header class="bmd-layout-header">
+      <div class="navbar navbar-dark bg-faded justify-content-start">
+        <button class="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-s2">
+          <span class="sr-only">Toggle drawer</span>
+          <i class="material-icons">menu</i>
+        </button>
+        <a class="navbar-brand" href="#">&nbsp;&nbsp;My Internship</a>
+      </div>
+    </header>
+    <div id="dw-s2" class="bmd-layout-drawer bg-faded">
+      <header>
+        <a class="navbar-brand"> My Internship</a>
+      </header>
+      <ul class="list-group">
+        <!-- <a id="menuShowAllQuotes" class="list-group-item"><i class="material-icons">people</i>show all quotes</a>
+        <a id="menuShowMyQuotes" class="list-group-item"><i class="material-icons">person</i>show my quotes</a> -->
+        <a id="menuSignOut" class="list-group-item"><i class="material-icons">login</i>Sign out</a>\
+        <a id="menuSelection" class="list-group-item"><i class="material-icons">assignment</i>Selection Page</a>
+      </ul>
+    </div>
+    <main class="bmd-layout-content">
+      <div id="listPage" class="container page-container">
+        <h1 class="text-align-center" id="JobCount">Jobs applied this session: 0
+        </h1>
+        <div id="jobListContainer">
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+
+
+
+  <button id="fab" type="button" class="btn bmd-btn-fab" data-toggle="modal" data-target="#addJobDialog">
+    <i class="material-icons">add</i>
+  </button>
+
+
+  <div class="modal fade" id="addJobDialog" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Job</h5>
+        </div>
+        <div class="modal-body">
+
+
+          <div class="form-group">
+            <label for="inputCompany" class="bmd-label-floating">Company Name</label>
+            <input type="text" class="form-control" id="inputCompany">
+          </div>
+          <div class="form-group">
+            <label for="inputMajor" class="bmd-label-floating">Major</label>
+            <input type="text" class="form-control" id="inputMajor">
+            <span class="bmd-help">What major is this company looking for?</span>
+          </div>
+          <div class="form-group">
+            <label for="inputYear" class="bmd-label-floating">Year</label>
+            <input type="text" class="form-control" id="inputYear">
+            <span class="bmd-help">What grade is this company looking for?</span>
+          </div>
+          <div class="form-group">
+            <label for="inputSummary" class="bmd-label-floating">Job Details</label>
+            <input type="text" class="form-control" id="inputSummary">
+            <span class="bmd-help">Enter details of job.</span>
+          </div>
+          <div class="form-group">
+            <label for="inputLink" class="bmd-label-floating">Company Link</label>
+            <input type="text" class="form-control" id="inputLink">
+            <span class="bmd-help">Enter the link to this company's website.</span>
+          </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+          <button type="button" id="submitAddJob" class="btn btn-primary" data-dismiss="modal">CREATE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="appliedDialog" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Did you apply?</h5>
+        </div>
+        <div class="modal-body">
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+          <button type="button" id="submitApplied" class="btn btn-primary" data-dismiss="modal">YES</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/popper.js"></script>
+    <script src="scripts/bootstrap-material-design.js"></script>
+    <script>
+      $("body").bootstrapMaterialDesign();
+    </script>
+    <script src="/__/firebase/7.18.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js?useEmulator=true"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.js"></script>
+    <script src="scripts/rosefire.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
